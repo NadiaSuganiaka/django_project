@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="auth-container" style="max-width: 400px; margin: 2rem auto; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+    <h2>Реєстрація</h2>
+    <hr>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" style="color: green; margin-bottom: 1rem;">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <div style="margin-top: 1rem;">
+            <button type="submit" class="btn-submit" style="padding: 0.5rem 1rem; cursor: pointer;">
+                Зареєструватися
+            </button>
+        </div>
+    </form>
+
+    <hr>
+    <div class="footer-links">
+        <small>
+            Вже маєте акаунт? <a href="{% url 'login' %}">Увійти</a>
+        </small>
+    </div>
+</div>
+</body>
+</html>
