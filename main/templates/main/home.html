@@ -1,11 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="uk">
 <head>
    <meta charset="UTF-8">
    <title>Головна сторінка</title>
 </head>
 <body>
-   <h1>Ласкаво просимо на мій сайт</h1>
-   <p>Це перша HTML-сторінка у Django.</p>
+   <img src="{% static 'img/photo-fun.png'%}" alt="Workplace" usemap="#workmap" height="603">
+
+   <map name="workmap">
+   <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+   <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+   </map>
 </body>
 </html>
