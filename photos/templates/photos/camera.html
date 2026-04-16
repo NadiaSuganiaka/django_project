@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% load static %} <!--Підключення фундамент шаблона-->
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static '/css/camera.css' %}">
+    <!--Тут css який ти ще хочеш підключити (базово використовується css котрий в корені проекту)-->
+{% endblock %}
+
+{% block title %}Camera{% endblock %} <!--Текст якмй показує у вікні браузера на вкладці-->
+
+{% block main %}
+    <!--Тут твій html-->
+    <h1></h1>
+
+    <section></section>
+{% endblock %}
+
+{% block scripts %}
+    <!--Тут html який ще треба підключити-->
+    <script src=""></script>
+{% endblock %}
+
+<!--Перероби потім всі файли які є під такий, тупо закинь все що є в body/main сюди-->

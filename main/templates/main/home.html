@@ -4,13 +4,17 @@
 <head>
    <meta charset="UTF-8">
    <title>Головна сторінка</title>
+   <link rel="stylesheet" href="/main/Home.css">
+   <link rel="stylesheet" href="/main/main.css">
 </head>
 <body>
-   <img src="{% static 'img/photo-fun.png'%}" alt="Workplace" usemap="#workmap" height="603">
+   <a href="login.html">Log in</a>
+
+   <img src="{% static '/main/img/photo-fun.png'%}" alt="Workplace" usemap="#workmap" height="604">
 
    <map name="workmap">
-   <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
-   <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+      <area shape="rect" coords="96,132,350,296" alt="Gallery" href="posts/gallery/">
+      <area shape="rect" coords="370,132,504,560" alt="PhotoToDo" href="posts/photos/">
    </map>
 </body>
 </html>
