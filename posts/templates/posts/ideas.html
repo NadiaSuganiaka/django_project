@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ideas{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'posts/css/ideas.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1>Ideas</h1>
+    
+    <div class="gallery">
+        {% for idea in ideas %}
+            <div class="polaroid">
+                {% if idea.photo %}
+                    <img src="{{ idea.photo.image.url }}" alt="{{ idea.title }}">
+                {% else %}
+                    <img src="{% static 'main/img/default-placeholder.png' %}" alt="No image">
+                {% endif %}
+                <p>{{ idea.title }}</p>
+            </div>
+        {% empty %}
+            <p>Ідей поки немає. Час щось придумати!</p>
+        {% endfor %}
+    </div>
+{% endblock %}

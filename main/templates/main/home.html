@@ -1,20 +1,33 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="uk">
-<head>
-   <meta charset="UTF-8">
-   <title>Головна сторінка</title>
-   <link rel="stylesheet" href="/main/Home.css">
-   <link rel="stylesheet" href="/main/main.css">
-</head>
-<body>
-   <a href="login.html">Log in</a>
 
-   <img src="{% static '/main/img/photo-fun.png'%}" alt="Workplace" usemap="#workmap" height="604">
+{% block title %}Головна сторінка{% endblock %}
 
-   <map name="workmap">
-      <area shape="rect" coords="96,132,350,296" alt="Gallery" href="posts/gallery/">
-      <area shape="rect" coords="370,132,504,560" alt="PhotoToDo" href="posts/photos/">
-   </map>
-</body>
-</html>
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section>
+        <img src="{% static 'main/img/photo-fun.png' %}" alt="Workplace" usemap="#workmap" height="604">
+
+        <map name="workmap">
+            <area shape="rect" coords="96,132,350,296" alt="Gallery" href="{% url 'gallery' %}">
+            <area shape="rect" coords="370,132,504,560" alt="PhotoToDo" href="{% url 'camera' %}">
+        </map>
+    </section>
+
+    <section class="auth-section">
+        {% if user.is_authenticated %}
+            <p>Вітаємо, <strong>{{ user.username }}</strong>!</p>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Вийти</button>
+            </form>
+        {% else %}
+            <p>Ви не увійшли в систему.</p>
+            <a href="{% url 'login' %}">Увійти</a>
+            <a href="{% url 'register' %}">Зареєструватися</a>
+        {% endif %}
+    </section>
+{% endblock %}

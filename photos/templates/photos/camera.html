@@ -1,22 +1,37 @@
-{% extends "base.html" %} {% load static %} <!--Підключення фундамент шаблона-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Camera - Photo Fun{% endblock %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static '/css/camera.css' %}">
-    <!--Тут css який ти ще хочеш підключити (базово використовується css котрий в корені проекту)-->
+    <link rel="stylesheet" href="{% static 'photos/css/camera.css' %}">
 {% endblock %}
 
-{% block title %}Camera{% endblock %} <!--Текст якмй показує у вікні браузера на вкладці-->
-
 {% block main %}
-    <!--Тут твій html-->
-    <h1></h1>
+    <a id="close" href="{% url 'home' %}">
+        <img src="{% static 'main/img/X.png' %}" alt="Close">
+    </a>
 
-    <section></section>
+    <div id="tablet">
+        <div id="front-camera"></div>
+        <div class="camera-container">
+            <video id="video" autoplay playsinline></video>
+            
+            <div id="countdown"></div>
+
+            <img id="still-frame" alt="Зафіксований кадр">
+        </div>
+
+        <div class="controls">
+            <button id="snap"></button>
+        </div>
+    </div>
+
+    <a id="ideas" href="{% url 'ideas' %}">Ideas</a>
+
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
 {% endblock %}
 
 {% block scripts %}
-    <!--Тут html який ще треба підключити-->
-    <script src=""></script>
+    <script src="{% static 'photos/js/camera.js' %}"></script>
 {% endblock %}
-
-<!--Перероби потім всі файли які є під такий, тупо закинь все що є в body/main сюди-->
