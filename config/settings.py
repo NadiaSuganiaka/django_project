@@ -39,6 +39,7 @@ INSTALLED_APPS = [
    'django.contrib.messages',
    'django.contrib.staticfiles',
    'django_cleanup.apps.CleanupConfig',
+   'widget_tweaks',
    'main',
    'accounts',
    'photos',
@@ -59,6 +60,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
 
 TEMPLATES = [
     {

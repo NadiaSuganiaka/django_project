@@ -9,7 +9,7 @@
 
 {% block main %}
     <a id="close" href="{% url 'home' %}">
-        <img src="{% static 'main/img/X.png' %}" alt="Close">
+        <img src="{% static 'photos/img/X.png' %}" alt="Close">
     </a>
 
     <div id="tablet">
@@ -19,7 +19,7 @@
             
             <div id="countdown"></div>
 
-            <img id="still-frame" alt="Зафіксований кадр">
+            <img id="still-frame" alt="">
         </div>
 
         <div class="controls">
@@ -30,6 +30,8 @@
     <a id="ideas" href="{% url 'ideas' %}">Ideas</a>
 
     <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+
+    <a id="ideas" href="{% url 'ideas' %}">Ideas</a>
 {% endblock %}
 
 {% block scripts %}
