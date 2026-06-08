@@ -9,5 +9,5 @@ urlpatterns = [
    path('accounts/', include('accounts.urls')),
    path('photos/', include('photos.urls')),
    path('posts/', include('posts.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0]) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
