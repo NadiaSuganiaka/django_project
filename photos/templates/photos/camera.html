@@ -32,8 +32,23 @@
     <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
 
     <a id="ideas" href="{% url 'ideas' %}">Ideas</a>
+
+    <!-- Затемнення фону -->
+    <div id="modal-overlay" class="overlay">
+    <div class="modal" role="dialog" aria-modal="true">
+        <h3>Choose the number of photos on one sheet?</h3>
+        <div class="modal-buttons">
+        <button class="numberButton" onclick="closeModal('1')">1 PHOTO</button>
+        <button class="numberButton" onclick="closeModal('2')">2 PHOTO</button>
+        <button class="numberButton" onclick="closeModal('3')">3 PHOTO</button>
+        </div>
+    </div>
+    </div>
 {% endblock %}
 
 {% block scripts %}
+    <script>
+        const STATIC_URL = "{% static 'photos/img/audio_camera.mp3' %}";
+    </script>
     <script src="{% static 'photos/js/camera.js' %}"></script>
 {% endblock %}

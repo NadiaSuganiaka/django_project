@@ -6,7 +6,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-image: url(img/background.png);
+    background-image: url('../img/background.png');
     background-repeat: no-repeat;    
     background-size: cover;          
     background-position: center;    
@@ -101,7 +101,7 @@ body {
 .controls {
     margin-top: 20px;
 }
-button {
+#snap {
     margin-left: 22px;
     height: 64px;
     width: 64px;
@@ -123,4 +123,58 @@ button {
     font-weight: 400;
     font-style: normal;
 
+}
+
+.overlay {
+    position: fixed;      /* покриває весь екран */
+    inset: 0;             /* top/right/bottom/left: 0 */
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;        /* поверх усього */
+}
+
+.modal {
+    background: #fff;
+    border-radius: 40px;
+    padding: 16px;
+    max-width: 344px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 4px #B88784;
+    gap: 8px;
+}
+
+h3{
+    color: #B88784;
+}
+
+.modal-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 188px;
+
+}
+
+.numberButton{
+    padding: 8px 16px;
+    border-radius: 32px;
+    border: solid 4px #CB9BD0;
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+    cursor: pointer;
+    color: #CB9BD0;
+    background-color: #fff;
+    width: 100%;
+    text-align: left;
 }

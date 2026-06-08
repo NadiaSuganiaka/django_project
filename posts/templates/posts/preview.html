@@ -14,7 +14,6 @@
         {% for photo in photos %}
         <div class="photo-card" id="card-{{ photo.id }}">
             <img src="{{ photo.image.url }}" alt="photo">
-            <button class="delete-btn" onclick="deletePhoto({{ photo.id }})">✕</button>
         </div>
         {% empty %}
             <p>Фотографій поки немає.</p>

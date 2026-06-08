@@ -26,4 +26,5 @@ def save_photo(request):
     })
 
 def camera_view(request):
+    request.session['pending_photos'] = []  # ← скидаємо при відкритті камери
     return render(request, 'photos/camera.html')

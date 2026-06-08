@@ -1,11 +1,3 @@
-async function deletePhoto(photoId) {
-    await fetch(`/posts/preview/delete/${photoId}/`, {
-        method: 'POST',
-        headers: { 'X-CSRFToken': getCookie('csrftoken') },
-    });
-    document.getElementById(`card-${photoId}`).remove();
-}
-
 async function createPost() {
     const res = await fetch('/posts/create/', {
         method: 'POST',

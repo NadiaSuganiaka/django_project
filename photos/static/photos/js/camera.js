@@ -5,7 +5,20 @@ const stillFrame = document.getElementById('still-frame');
 const countdownEl = document.getElementById('countdown');
 const context = canvas.getContext('2d');
 
-const shutterSound = new Audio('img/audio_camera.mp3');
+const shutterSound = new Audio(STATIC_URL);
+
+let photoLimit = 3;
+
+function openModal() {
+    document.getElementById('modal-overlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // блокує скрол фону
+}
+
+function closeModal(action) {
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+    photoLimit = parseInt(action)
+}
 
 async function startCamera() {
     try {
@@ -49,7 +62,7 @@ async function takePhoto() {
 
         const data = await res.json();
 
-        if (data.count >= 3) {
+        if (data.count >= photoLimit) {
             window.location.href = '/posts/preview/';
         }
     }, 'image/png');

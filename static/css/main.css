@@ -32,6 +32,15 @@ h1{
     cursor:default;  
 }
 
+h3{
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 32px;
+    cursor:default;  
+    margin: 0;
+}
+
 .close{
     display: flex;
     align-items: center;
