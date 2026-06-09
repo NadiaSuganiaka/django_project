@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Preview - Твої фото{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static "posts/css/preview.css" %}">
+{% endblock %}
+
+{% block main %}
+    <h1>Твої фото</h1>
+
+    <div class="photos">
+        {% for photo in photos %}
+        <div class="photo-card" id="card-{{ photo.id }}">
+            <img src="{{ photo.image.url }}" alt="photo">
+        </div>
+        {% empty %}
+            <p>Фотографій поки немає.</p>
+        {% endfor %}
+    </div>
+
+    <button class="create-btn" onclick="createPost()">Створити пост</button>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'posts/js/preview.js' %}"></script>
+{% endblock %}

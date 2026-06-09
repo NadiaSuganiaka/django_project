@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;    
+    background-size: cover;          
+    background-position: center;    
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#sing{
+    transform: rotate(8deg);
+}
+
+.square{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F7F7F7;
+    width: 554px;
+    min-height: 388px;
+    border-style: solid;
+    border-color: black;
+    border-width: 30px 60px;
+    outline: 3px solid black; /* Зовнішній контур */
+    
+    
+}
+
+
+.inputs{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 80%;
+    gap: 12px;
+}
+
+.signInputs, .google-btn {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    width: 100%;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px; /* Тепер 100% — це фінальна ширина з урахуванням padding */
+}
+
+
+#line{
+    height: 100%;
+    width: 1px;
+    background-color: #ccc;
+}
+
+.google-btn img {
+    width: 20px;
+}
+
+
+#singText{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 16px 0 12px 0;
+}
+
+#singText p {
+    margin: 0;
+}
+
+#singHref{
+    color: #BC8E8A;
+}
+
+#logoSing{
+    margin: 30px 0 8px 0;
+}
+
+#saveButton{
+    margin: 0px 0 30px 0;
+    cursor: pointer;
+    background-color: none;
+    border: none;
+
+}
+
+#forgot{
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 16px;
+    align-self: flex-start; /* Зміщує елемент в початок (ліворуч) */
+}

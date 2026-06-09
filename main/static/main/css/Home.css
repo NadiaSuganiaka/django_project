@@ -1,0 +1,107 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+}
+area:hover {
+    outline: 5px solid red;
+}
+
+#photoFun{
+    margin: -28px;
+}
+
+#photoBooth{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+
+#ViewGallery{
+    margin-bottom: 20%;
+    align-self: flex-end;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#TakeAPhoto{
+    margin-top: 15%;
+    align-self: flex-start;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none; /* Щоб на іконки не можна було натиснути після зникнення */
+}
+
+.auth-section{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 24px;
+}
+
+.logout-section{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+}
+
+#logout{
+    color: #BC8E8A;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 16px;
+    padding: 8px;
+    background: none;
+    cursor: pointer;
+
+}
+
+#login{
+    cursor: pointer;
+}
+
+#profile{
+    font-size: 32px;
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #D1A483;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.bubble {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    font-size: 2rem;
+    animation: floatUp 2s ease-out forwards;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to   { transform: translateY(-200px); opacity: 0; }
+}
+

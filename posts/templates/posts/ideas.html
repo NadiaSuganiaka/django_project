@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ideas{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'posts/css/ideas.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1>Ideas</h1>
+    <!--
+    <div class="gallery">
+        {% for idea in ideas %}
+            <div class="polaroid">
+                {% if idea.photo %}
+                    <img src="{{ idea.photo.image.url }}" alt="{{ idea.title }}">
+                {% else %}
+                    <img src="{% static 'main/img/default-placeholder.png' %}" alt="No image">
+                {% endif %}
+                <p>{{ idea.title }}</p>
+            </div>
+        {% empty %}
+            <p>Ідей поки немає. Час щось придумати!</p>
+        {% endfor %}
+    </div>-->
+    <div class="gallery-wrapper">
+        <svg id="rope" width="100%" height="6">
+            <rect width="100%" height="6" stroke="#B88784" fill=#B88784 />
+        </svg>
+        <div class="gallery">
+            <div class="gallery-photo">
+                <div class="photo-box">
+                    <img class="photos" src="{% static 'posts/img/ideas1.png' %}" alt="">
+                </div>
+                <div class="photo-box">
+                    <img class="photos" src="{% static 'posts/img/ideas2.png' %}" alt="">
+                </div>
+                <div class="photo-box">
+                    <img class="photos" src="{% static 'posts/img/ideas1.png' %}" alt="">
+                </div>
+                <div class="photo-box">
+                    <img class="photos" src="{% static 'posts/img/ideas1.png' %}" alt="">
+                </div>
+                <div class="photo-box">
+                    <img class="photos" src="{% static 'posts/img/ideas2.png' %}" alt="">
+                </div>
+                <div class="photo-box">
+                    <img class="photos" src="{% static 'posts/img/ideas1.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="clips-layer"></div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'posts/js/ideas.js' %}"></script>
+{% endblock %}

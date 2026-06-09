@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'posts/css/gallery.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1>{{ title }}</h1>
+
+    <div class="gallery">
+        {% for post in posts %}
+            <div class="polaroid" id="post-{{ post.id }}">
+                {% for photo in post.photos.all %}
+                    <img src="{{ photo.image.url }}" alt="photo">
+                {% empty %}
+                    <p>У цьому пості немає фото.</p>
+                {% endfor %}
+            </div>
+        {% empty %}
+            <p>Галерея порожня.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
